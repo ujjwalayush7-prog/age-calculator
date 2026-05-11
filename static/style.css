@@ -1,0 +1,185 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:Arial, sans-serif;
+
+    overflow:hidden;
+
+    background:linear-gradient(-45deg,#0f172a,#1e3a8a,#7c3aed,#06b6d4);
+    background-size:400% 400%;
+
+    animation:gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove{
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.container{
+    width:420px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+
+    text-align:center;
+
+    animation:fadeIn 1s ease;
+}
+
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    color:white;
+
+    margin-bottom:30px;
+
+    font-size:32px;
+}
+
+input{
+    width:100%;
+
+    padding:14px;
+
+    margin:12px 0;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:16px;
+
+    background:rgba(255,255,255,0.2);
+
+    color:white;
+}
+
+
+input::placeholder{
+    color:#e2e8f0;
+}
+
+button{
+    width:100%;
+
+    padding:14px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#06b6d4;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
+
+    background:#22d3ee;
+}
+
+
+
+.result-card{
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.12);
+
+    color:white;
+
+    animation:fadeIn 0.8s ease;
+}
+
+.result-card h2{
+    margin-bottom:20px;
+}
+
+.result-card p{
+    margin:12px 0;
+
+    font-size:18px;
+}
+
+.result-card span{
+    color:#67e8f9;
+
+    font-weight:bold;
+}
+
+
+.error-box{
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:rgba(255,0,0,0.2);
+
+    color:white;
+
+    font-weight:bold;
+}
+
+hr{
+    margin:20px 0;
+
+    border:1px solid rgba(255,255,255,0.2);
+}

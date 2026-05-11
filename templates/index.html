@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Advanced Age Calculator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="background-animation"></div>
+
+    <div class="container">
+
+        <h1>🎂 Age Calculator 🎂</h1>
+
+        <form method="POST">
+
+            <input type="number" name="year" placeholder="Birth Year" required>
+
+            <input type="number" name="month" placeholder="Birth Month" required>
+
+            <input type="number" name="day" placeholder="Birth Day" required>
+
+            <button type="submit">Calculate Age</button>
+
+        </form>
+
+        {% if result %}
+
+        <div class="result-card">
+
+            <h2>Your Exact Age</h2>
+
+            <p><span>Years:</span> {{ result.years }}</p>
+            <p><span>Months:</span> {{ result.months }}</p>
+            <p><span>Days:</span> {{ result.days }}</p>
+
+            <hr>
+
+             <p><span>Zodiac Sign:</span> {{ result.zodiac }}</p>
+
+            <p><span>Total Days Alive:</span> {{ result.total_days_alive }}</p>
+
+            <p><span>Next Birthday In:</span> {{ result.birthday_countdown }} days 🎉</p>
+
+        </div>
+
+        {% endif %}
+
+        {% if error %}
+
+        <div class="error-box">
+            {{ error }}
+        </div>
+
+        {% endif %}
+    
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
+                    
