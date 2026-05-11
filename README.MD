@@ -15,7 +15,7 @@ A simple and modern Age Calculator built using Python and Tkinter.
 
 ## 📸 Screenshot
 
-![Age Calculator Screenshot](Screenshot 2026-05-10 200903.png)
+![Age Calculator Screenshot](Screenshot.png)
 
 ---
 
