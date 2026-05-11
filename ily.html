@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You ❤️</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: #fff0f6;
+      padding: 30px;
+      border-radius: 25px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(255, 182, 193, 0.4);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      color: #ff5c8a;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #7a3b5e;
+      font-size: 1.05em;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ff85a2;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    button:hover {
+      background: #ff5c8a;
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 20px;
+      animation: rise 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes rise {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Hey My Love 💕</h1>
+    <p id="message">
+      I made this little page just to remind you how special you are to me.
+    </p>
+    <button onclick="nextMessage()">Tap here 💗</button>
+  </div>
+
+  <script>
+    const messages = [
+      "Every time I think of you, my heart feels lighter 💞",
+      "Tujh se mera din suru hota hai aur tujh se hi khatam 💖",
+      "You make my ordinary days feel magical ✨",
+      "I feel lucky just knowing that you're minee 🌸",
+      "No matter what happens, you are always my favorite person 💖",
+      "I love you sooo much meri Nainaaaa 💗"
+    ];
+
+    let index = 0;
+    function nextMessage() {
+      index++;
+      if (index < messages.length) {
+        document.getElementById('message').innerText = messages[index];
+        createHeart();
+      } else {
+        document.getElementById('message').innerText = "Forever yours ❤️";
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+  </script>
+
+</body>
+</html>
